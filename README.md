@@ -173,3 +173,63 @@ All participant details in this project are fictional and intended only for educ
 - Baseline information should be reviewed before randomization.
 - All required fields must be completed or have an appropriate documented missing-data status.
 - Any correction must maintain an audit trail in an actual EDC system.
+
+5. CRF 02 – Medical History
+
+Form Code: CRF-02-MH
+
+Purpose: To collect relevant previous and ongoing medical conditions of study participants.
+
+Field-Level Specifications
+
+1. Participant ID
+
+* Variable: SUBJID
+* Data Type: Text
+* Required: Yes
+* Description: Unique participant identifier.
+
+2. Medical Condition
+
+* Variable: MHTERM
+* Data Type: Text
+* Required: Yes
+* Description: Name of the medical condition.
+
+3. Diagnosis Date
+
+* Variable: MHSTDAT
+* Data Type: Date
+* Required: No
+* Description: Date when the condition was diagnosed.
+
+4. Ongoing Condition?
+
+* Variable: MHONGO
+* Data Type: Coded
+* Required: Yes
+* Values: 1 = Yes, 0 = No
+
+5. Treatment Details
+
+* Variable: MHTREAT
+* Data Type: Text
+* Required: No
+* Description: Relevant treatment history.
+
+6. Medical History Notes
+
+* Variable: MHNOTES
+* Data Type: Text
+* Required: No
+* Description: Additional relevant information.
+
+Basic Edit Checks
+
+1. Participant ID must match an enrolled participant.
+2. Medical Condition cannot be blank.
+3. Diagnosis Date must not be after informed consent.
+4. Ongoing Condition must accept only 1 or 0.
+5. Multiple medical conditions can be recorded for one participant.
+
+Form Design Note: This is a repeating form. Each medical condition must be entered as a separate record for the same participant.
