@@ -234,4 +234,4 @@ Basic Edit Checks
 
 Form Design Note: This is a repeating form. Each medical condition must be entered as a separate record for the same participant.
 
- ##CRF 03 –  CONCOMITANT MEDICATIONS
+ ## CRF 03 –  CONCOMITANT MEDICATIONS
