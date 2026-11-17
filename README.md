@@ -154,3 +154,22 @@ VISIT:
 
 ### Important Note
 All participant details in this project are fictional and intended only for educational practice.
+
+
+### Field-Level Specifications
+
+| Variable | Required? | Allowed Values | Edit Check |
+|---|---|---|---|
+| SUBJID | Yes | BR001 to BR012 | Must be unique |
+| SCREENID | Yes | SCR001 to SCR012 | Must be unique |
+| AGE | Yes | Integer 18–65 | Reject values below 18 or above 65 |
+| SEX | Yes | Protocol-defined categories | Must be an allowed value |
+| VISIT | Yes | Screening, Baseline | Must be an allowed visit |
+| ASSESSDT | Yes | Valid date | Must not be a future date |
+
+### Form Design Notes
+- Each participant must have a unique participant ID.
+- Demographics should be collected at the Screening visit.
+- Baseline information should be reviewed before randomization.
+- All required fields must be completed or have an appropriate documented missing-data status.
+- Any correction must maintain an audit trail in an actual EDC system.
