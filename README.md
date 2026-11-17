@@ -100,3 +100,57 @@ Change in HbA1c (%) from baseline to Week 12.
 ## 10. Project Disclaimer
 
 This is a fictional educational CDM portfolio project. All study details and participant data are simulated. This is not an actual clinical trial.
+
+
+# 2. CRF DESIGN
+
+## CRF 01 – DEMOGRAPHICS FORM
+
+### Purpose
+To collect basic demographic information of participants enrolled in the BRIGHT-DM-101 simulated clinical trial.
+
+### Form Details
+- Form Name: Demographics
+- Form ID: DEMO
+- Form Type: Non-repeating
+- Data Collection: Screening / Baseline
+
+### CRF Fields
+
+| Field Label | Variable Name | Data Type |
+|---|---|---|
+| Participant ID | SUBJID | Text |
+| Screening Number | SCREENID | Text |
+| Age | AGE | Integer |
+| Sex | SEX | Coded choice |
+| Visit Name | VISIT | Coded choice |
+| Assessment Date | ASSESSDT | Date |
+
+### Response Options
+
+SEX:
+- 1 = Male
+- 2 = Female
+- 3 = Other / Not specified, if permitted by the protocol
+
+VISIT:
+- 1 = Screening
+- 2 = Baseline
+
+### Data Entry Instructions
+1. Enter the assigned participant ID.
+2. Enter the screening number.
+3. Record age in completed years.
+4. Select the appropriate sex category.
+5. Select the applicable study visit.
+6. Record the assessment date.
+
+### Data Quality Considerations
+- Participant ID must not be blank.
+- Age must be between 18 and 65 years.
+- Screening number must be unique.
+- Assessment date must be a valid date.
+- Visit must be selected from the permitted options.
+
+### Important Note
+All participant details in this project are fictional and intended only for educational practice.
