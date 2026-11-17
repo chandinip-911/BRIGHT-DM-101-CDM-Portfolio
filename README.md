@@ -174,7 +174,7 @@ All participant details in this project are fictional and intended only for educ
 - All required fields must be completed or have an appropriate documented missing-data status.
 - Any correction must maintain an audit trail in an actual EDC system.
 
-5. CRF 02 – Medical History
+ ## CRF 02 – MEDICAL HISTORY 
 
 Form Code: CRF-02-MH
 
