@@ -233,3 +233,5 @@ Basic Edit Checks
 5. Multiple medical conditions can be recorded for one participant.
 
 Form Design Note: This is a repeating form. Each medical condition must be entered as a separate record for the same participant.
+
+ ##CRF 03 –  CONCOMITANT MEDICATIONS
