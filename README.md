@@ -235,3 +235,37 @@ Basic Edit Checks
 Form Design Note: This is a repeating form. Each medical condition must be entered as a separate record for the same participant.
 
  ## CRF 03 –  CONCOMITANT MEDICATIONS
+
+Form Code: CRF-03-CM
+Form Type: Repeating Form
+Purpose: To capture medications taken by study participants before or during the clinical trial.
+
+A. CRF Field Specifications
+
+Field Label	Variable Name	Data Type	Required	Response / Format
+Participant ID	SUBJID	Text	Yes	DM001–DM012
+Medication Name	CMTRT	Text	Yes	Free text
+Medication Start Date	CMSTDTC	Date	No	DD-MMM-YYYY
+Medication End Date	CMENDTC	Date	Conditional	DD-MMM-YYYY
+Ongoing Medication	CMONGO	Coded	Yes	1=Yes, 0=No
+Dose	CMDOS	Numeric/Text	No	Dose value
+Dose Unit	CMDOSU	Coded/Text	No	mg, mcg, mL, etc.
+Route	CMROUTE	Coded	No	Oral, IV, SC, topical, other
+Frequency	CMDOSFRQ	Coded/Text	No	Once daily, twice daily, etc.
+Indication	CMINDC	Text	No	Reason for medication
+
+B. Edit Check Specifications
+
+Check ID	Validation Rule	Expected System Action
+CM-001	Medication Name must not be blank	Display error
+CM-002	End Date must not precede Start Date	Display error
+CM-003	If Ongoing = Yes, End Date should be blank	Display query
+CM-004	If Ongoing = No, End Date should be entered	Display query
+CM-005	Participant ID must match an enrolled participant	Display error
+
+C. Form Design Notes
+
+* The form is repeating: participants may have multiple medication records.
+* Each medication must have a separate record.
+* Medication dates should follow the study’s date conventions.
+* Conditional checks should follow the study protocol and approved data-entry specifications.
