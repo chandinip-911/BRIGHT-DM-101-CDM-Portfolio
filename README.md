@@ -236,36 +236,97 @@ Form Design Note: This is a repeating form. Each medical condition must be enter
 
  ## CRF 03 –  CONCOMITANT MEDICATIONS
 
-Form Code: CRF-03-CM
-Form Type: Repeating Form
-Purpose: To capture medications taken by study participants before or during the clinical trial.
+Purpose
 
-A. CRF Field Specifications
+To record medications, supplements and treatments taken by participants before or during the clinical trial.
 
-Field Label	Variable Name	Data Type	Required	Response / Format
-Participant ID	SUBJID	Text	Yes	DM001–DM012
-Medication Name	CMTRT	Text	Yes	Free text
-Medication Start Date	CMSTDTC	Date	No	DD-MMM-YYYY
-Medication End Date	CMENDTC	Date	Conditional	DD-MMM-YYYY
-Ongoing Medication	CMONGO	Coded	Yes	1=Yes, 0=No
-Dose	CMDOS	Numeric/Text	No	Dose value
-Dose Unit	CMDOSU	Coded/Text	No	mg, mcg, mL, etc.
-Route	CMROUTE	Coded	No	Oral, IV, SC, topical, other
-Frequency	CMDOSFRQ	Coded/Text	No	Once daily, twice daily, etc.
-Indication	CMINDC	Text	No	Reason for medication
+Field-Level Specifications
 
-B. Edit Check Specifications
+1. Participant ID
 
-Check ID	Validation Rule	Expected System Action
-CM-001	Medication Name must not be blank	Display error
-CM-002	End Date must not precede Start Date	Display error
-CM-003	If Ongoing = Yes, End Date should be blank	Display query
-CM-004	If Ongoing = No, End Date should be entered	Display query
-CM-005	Participant ID must match an enrolled participant	Display error
+* Variable: SUBJID
+* Data Type: Text
+* Required: Yes
+* Description: Unique participant identifier.
 
-C. Form Design Notes
+2. Medication Name
 
-* The form is repeating: participants may have multiple medication records.
+* Variable: CMTRT
+* Data Type: Text
+* Required: Yes
+* Description: Name of the medication.
+
+3. Medication Start Date
+
+* Variable: CMSTDTC
+* Data Type: Date
+* Required: No
+* Description: Date medication was started.
+
+4. Medication End Date
+
+* Variable: CMENDTC
+* Data Type: Date
+* Required: Conditional
+* Description: Date medication was stopped.
+
+5. Medication Ongoing
+
+* Variable: CMONGO
+* Data Type: Coded
+* Required: Yes
+* Values: 1 = Yes; 0 = No.
+
+6. Dose
+
+* Variable: CMDOS
+* Data Type: Text
+* Required: No
+* Description: Medication dose.
+
+7. Dose Unit
+
+* Variable: CMDOSU
+* Data Type: Text
+* Required: No
+* Description: Unit of dose, such as mg or mcg.
+
+8. Route of Administration
+
+* Variable: CMROUTE
+* Data Type: Coded
+* Required: No
+* Values: Oral, Intravenous, Subcutaneous, Topical, Other.
+
+9. Frequency
+
+* Variable: CMDOSFRQ
+* Data Type: Text
+* Required: No
+* Description: How frequently the medication is taken.
+
+10. Indication
+
+* Variable: CMINDC
+* Data Type: Text
+* Required: No
+* Description: Reason for taking the medication.
+
+Edit Check Specifications
+
+CM-001: Medication Name must not be blank.
+
+CM-002: Medication End Date must not be earlier than Medication Start Date.
+
+CM-003: If Medication Ongoing = Yes, Medication End Date should be blank.
+
+CM-004: If Medication Ongoing = No, Medication End Date should be entered.
+
+CM-005: Participant ID must match an enrolled study participant.
+
+Form Design Notes
+
+* This is a repeating form.
 * Each medication must have a separate record.
-* Medication dates should follow the study’s date conventions.
-* Conditional checks should follow the study protocol and approved data-entry specifications.
+* One participant may have multiple medication records.
+* Medication dates must follow the study’s date conventions.
